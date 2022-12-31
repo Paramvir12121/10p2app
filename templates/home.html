@@ -94,7 +94,8 @@
       <h3 class="float-md-start mb-0">Cover</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
-        <a class="nav-link fw-bold py-1 px-0" href="#">Features</a>
+
+        <a class="nav-link fw-bold py-1 px-1" href="#">Features</a>
         <a class="nav-link fw-bold py-1 px-0" href="#">Contact</a>
       </nav>
     </div>
@@ -104,12 +105,37 @@
     <h1>10 + 2 Rule</h1>
     <p class="lead">For every 10 minute spent on Work, You earn 2 minutes of free time.</p>
     <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
+      <div id="timer">0</div>
+      <div id="freeTimer">0</div>
+
+<script>
+  function startTimer() {
+    // Get the current time
+    var currentTime = new Date();
+  
+    // Calculate the elapsed time in seconds
+    var elapsedTime = Math.floor((currentTime - startTime) / 1000);
+    var freeTime = elapsedTime/5;
+    // Update the timer element with the elapsed time
+    document.getElementById("timer").innerHTML = elapsedTime;
+    document.getElementById("freeTimer").innerHTML = freeTime;
+  
+    // Call this function again after 1 second
+    setTimeout(startTimer, 1000);
+  }
+  
+  // Set the start time to the current time
+  var startTime = new Date();
+  
+  // Start the timer
+  startTimer();
+
+</script>
     </p>
   </main>
 
   <footer class="mt-auto text-white-50">
-    <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+    <p>tptwo app by <a href="https://getbootstrap.com/" class="text-white">Param</a>, by <a href="https://twitter.com/mdo" class="text-white">@qwerty_cloud</a>.</p>
   </footer>
 </div>
 
